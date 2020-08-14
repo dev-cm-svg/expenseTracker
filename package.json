@@ -1,7 +1,7 @@
 {
   "name": "expense-tracker-react",
   "version": "0.1.0",
-  "homepage": "http://dev-cm-svg.github.io/expenseTracker",
+  "homepage": "http://dev-cm-svg.github.io/DreamsTracker",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

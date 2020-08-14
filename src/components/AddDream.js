@@ -1,23 +1,23 @@
 import React, { useState, useContext } from "react";
-import { GlobalContext } from "../context/GlobalState";
+import { NewGlobalContext } from "../context/NewGlobalState";
 
-export const AddTransaction = () => {
+export const AddDream = () => {
   const [text, setText] = useState("");
-  const [amount, setAmount] = useState(0);
-  const { addTransaction } = useContext(GlobalContext);
+  const [time, setTime] = useState("");
+  const { addDream } = useContext(NewGlobalContext);
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const newTransaction = {
+    const newDream = {
       id: Math.floor(Math.random() * 1000000),
       text,
-      amount: +amount,
+      time,
     };
-    addTransaction(newTransaction);
+    addDream(newDream);
   };
   return (
     <>
-      <h3>Add new transaction</h3>
+      <h3>Add new dream</h3>
       <form onSubmit={onSubmit}>
         <div className="form-control">
           <label htmlFor="text">Text</label>
@@ -30,17 +30,19 @@ export const AddTransaction = () => {
         </div>
         <div className="form-control">
           <label htmlFor="amount">
-            Amount <br />
-            (negative - expense, positive - income)
+            Time <br />
+            (expect time to complete)
           </label>
+          <br />
           <input
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder="Enter amount..."
+            type="date"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+            placeholder="Pick up a date"
+            min="2020-08-12"
           />
         </div>
-        <button className="btn">Add transaction</button>
+        <button className="btn">Add to Dream List</button>
       </form>
     </>
   );

@@ -1,23 +1,21 @@
 import React from "react";
 import { Header } from "./components/header";
-import { Balance } from "./components/Balance";
-import { IncomeExpenses } from "./components/IncomeExpenses";
-import { TransactionList } from "./components/TransactionList";
-import { AddTransaction } from "./components/AddTransaction";
-import { GlobalProvider } from "./context/GlobalState";
+import { ToBeCompleted } from "./components/ToBeCompleted";
+import { Completed } from "./components/Completed.js";
+import { AddDream } from "./components/AddDream";
+import { NewGlobalProvider } from "./context/NewGlobalState";
 import "./App.css";
 
 function App() {
   return (
-    <GlobalProvider>
+    <NewGlobalProvider>
       <Header />
       <div className="container">
-        <Balance />
-        <IncomeExpenses />
-        <TransactionList />
-        <AddTransaction />
+        <ToBeCompleted />
+        <Completed />
+        <AddDream />
       </div>
-    </GlobalProvider>
+    </NewGlobalProvider>
   );
 }
 
